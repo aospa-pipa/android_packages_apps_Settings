@@ -4823,4 +4823,8 @@
     <string name="dock_multi_instances_not_supported_text" msgid="3513493664467667084">"此应用只能在 1 个窗口中打开"</string>
     <string name="dds_preference_smart_dds_switch_is_on">智能数据卡切换已开启</string>
     <string name="mobile_data_settings_summary_on_smart_dds_unavailable">智能数据卡切换已开启时，在通话中此功能不可用</string>
+
+    <!-- Game Space -->
+    <string name="game_space_title">游戏空间</string>
+    <string name="game_space_summary">提升您的游戏体验</string>
 </resources>

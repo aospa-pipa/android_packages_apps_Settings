@@ -12496,4 +12496,9 @@
     <string name="ciwlan_exit_notification_positive_button">OPEN SETTINGS</string>
     <string name="ciwlan_exit_notification_negative_button">DISMISS</string>
     <string name="ciwlan_channel_name">Voice Over Cellular Internet</string>
+
+    <!-- Game Space -->
+    <string name="game_space_title">Game Space</string>
+    <string name="game_space_summary">Enhance your gaming experience</string>
+
 </resources>
