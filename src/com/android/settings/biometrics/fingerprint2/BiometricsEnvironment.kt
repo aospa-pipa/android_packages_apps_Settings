@@ -24,6 +24,7 @@ import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
 import com.android.internal.widget.LockPatternUtils
 import com.android.settings.SettingsApplication
+import com.android.settings.Utils
 import com.android.settings.biometrics.GatekeeperPasswordProvider
 import com.android.settings.biometrics.fingerprint2.data.repository.DebuggingRepository
 import com.android.settings.biometrics.fingerprint2.data.repository.DebuggingRepositoryImpl
@@ -74,8 +75,7 @@ class BiometricsEnvironment(context: SettingsApplication) : ViewModelStoreOwner 
   private val backgroundDispatcher = executorService.asCoroutineDispatcher()
   private val applicationScope = MainScope()
   private val gateKeeperPasswordProvider = GatekeeperPasswordProvider(LockPatternUtils(context))
-  private val fingerprintManager =
-    context.getSystemService(FragmentActivity.FINGERPRINT_SERVICE) as FingerprintManager?
+  private val fingerprintManager = Utils.getFingerprintManagerOrNull(context)
 
   private val fingerprintSensorRepository: FingerprintSensorRepository =
     FingerprintSensorRepositoryImpl(fingerprintManager, backgroundDispatcher, applicationScope)
