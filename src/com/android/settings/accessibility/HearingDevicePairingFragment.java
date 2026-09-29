@@ -500,10 +500,15 @@ public class HearingDevicePairingFragment extends RestrictedDashboardFragment im
                                 }
                                 addDevice(cachedDevice);
                             }
-                        } else {
-                            gatt.disconnect();
-                            mConnectingGattList.remove(gatt);
                         }
+                        // The compatibility check is done once services are discovered
+                        // (regardless of the result). Release this GATT link immediately so it
+                        // does not keep the device connected on its identity/public address.
+                        // A hearing aid stops advertising while connected, and holding this link
+                        // open blocks a concurrent createBond() that targets the same device via
+                        // its ASHA RPA -> LE create-connection times out.
+                        gatt.disconnect();
+                        mConnectingGattList.remove(gatt);
                     }
                 });
         mConnectingGattList.add(gatt);
