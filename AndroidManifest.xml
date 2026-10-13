@@ -3175,6 +3175,12 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
             android:theme="@style/GlifV4Theme.DayNight"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".biometrics.face.FaceEnrollFoldPage"
+            android:exported="false"
+            android:theme="@style/GlifV4Theme.DayNight"
+            android:configChanges="density|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+            android:screenOrientation="nosensor"/>
+
         <activity android:name=".biometrics.BiometricHandoffActivity"
                   android:exported="false"/>
 

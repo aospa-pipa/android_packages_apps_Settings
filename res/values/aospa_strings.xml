@@ -6,4 +6,9 @@
     <string name="app_volume_title">Per-app volume control</string>
     <string name="app_volume_summary">Show per-app volume button into volume dialog</string>
 
+    <!-- Face enrollment posture guidance (devices that require a specific posture) -->
+    <string name="face_enrolling_close_to_continue">Fold phone during setup</string>
+    <string name="face_enrolling_close_to_continue_description">The phone must be folded to set up or use Face Unlock</string>
+    <string name="face_enrolling_do_it_later">Do it later</string>
+
 </resources>
