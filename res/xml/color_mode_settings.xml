@@ -26,24 +26,42 @@
         android:title="@string/color_mode_advanced_category"
         android:order="100">
 
-        <SeekBarPreference
+        <co.aospa.framework.preference.CustomSeekBarPreference
             android:key="color_balance_red"
             android:title="@string/color_mode_balance_red"
-            style="@style/SettingsSeekbarPreference.SettingsLib"
+            android:persistent="false"
+            android:defaultValue="255"
+            android:max="255"
+            settings:min="25"
+            settings:continuousUpdates="true"
+            settings:showButtons="false"
+            settings:showTicks="false"
             settings:keywords="@string/keywords_color_balance"
             settings:controller="co.aospa.settings.display.ColorBalancePreferenceController" />
 
-        <SeekBarPreference
+        <co.aospa.framework.preference.CustomSeekBarPreference
             android:key="color_balance_green"
             android:title="@string/color_mode_balance_green"
-            style="@style/SettingsSeekbarPreference.SettingsLib"
+            android:persistent="false"
+            android:defaultValue="255"
+            android:max="255"
+            settings:min="25"
+            settings:continuousUpdates="true"
+            settings:showButtons="false"
+            settings:showTicks="false"
             settings:keywords="@string/keywords_color_balance"
             settings:controller="co.aospa.settings.display.ColorBalancePreferenceController" />
 
-        <SeekBarPreference
+        <co.aospa.framework.preference.CustomSeekBarPreference
             android:key="color_balance_blue"
             android:title="@string/color_mode_balance_blue"
-            style="@style/SettingsSeekbarPreference.SettingsLib"
+            android:persistent="false"
+            android:defaultValue="255"
+            android:max="255"
+            settings:min="25"
+            settings:continuousUpdates="true"
+            settings:showButtons="false"
+            settings:showTicks="false"
             settings:keywords="@string/keywords_color_balance"
             settings:controller="co.aospa.settings.display.ColorBalancePreferenceController" />
 
@@ -58,6 +76,7 @@
             settings:showSign="true"
             settings:continuousUpdates="true"
             settings:showButtons="false"
+            settings:showTicks="false"
             settings:controller="co.aospa.settings.display.ColorSaturationPreferenceController" />
 
         <co.aospa.framework.preference.CustomSeekBarPreference
@@ -72,6 +91,7 @@
             settings:showSign="true"
             settings:continuousUpdates="true"
             settings:showButtons="false"
+            settings:showTicks="false"
             settings:textStart="@string/color_temperature_start_label"
             settings:textEnd="@string/color_temperature_end_label"
             settings:keywords="@string/keywords_color_temperature"
