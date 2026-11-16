@@ -73,13 +73,11 @@ open class ColorAndMotionScreen : PreferenceScreenMixin {
                 +ColorCorrectionScreen.KEY
                 +ColorInversionScreen.KEY
                 +DarkModeScreenOnAccessibility.KEY
-                +BlurSwitchPreference()
                 +RemoveAnimationsPreference()
                 +TextCursorBlinkRatePreference(context)
             } else {
                 +ColorInversionScreen.KEY
                 +DarkModeScreenOnAccessibility.KEY
-                +BlurSwitchPreference()
                 +PreferenceCategory(
                     key = "experimental_category",
                     purpose = R.string.experimental_category_purpose,

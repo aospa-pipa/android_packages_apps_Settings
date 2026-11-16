@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.accessibility.colorandmotion.ui
+package com.android.settings.display
 
 import android.content.Context
 import android.os.PowerManager
@@ -50,9 +50,6 @@ class BlurSwitchPreference :
     override fun getEnabledStability() = PreconditionStability.UNSTABLE
 
     override fun isEnabled(context: Context) = !context.isPowerSaveMode()
-
-    override val icon: Int
-        get() = R.drawable.ic_blur
 
     override val keywords: Int
         get() = R.string.keywords_blur_switch

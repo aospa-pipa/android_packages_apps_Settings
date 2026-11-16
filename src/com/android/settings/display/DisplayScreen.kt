@@ -101,6 +101,7 @@ open class DisplayScreen :
                 {
                     if (AccessibilityFlags.catalystDarkUiMode()) +DarkModeScreen.KEY
                     +TextReadingScreen.KEY
+                    +BlurSwitchPreference()
                 }
             +Category(
                 "category_other",

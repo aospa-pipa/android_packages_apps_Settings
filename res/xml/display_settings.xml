@@ -120,6 +120,13 @@
             android:summary="@string/icon_manager_summary">
             <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
         </Preference>
+
+        <SwitchPreferenceCompat
+            android:key="disable_window_blurs"
+            android:title="@string/blur_switch"
+            android:summary="@string/blur_switch_summary"
+            settings:controller="com.android.settings.display.BlurPreferenceController"
+            settings:keywords="@string/keywords_blur_switch" />
     </PreferenceCategory>
 
     <PreferenceCategory
