@@ -26,6 +26,7 @@ package com.android.settings;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.pm.PackageItemInfo;
 import android.content.pm.PackageManager;
 import android.database.ContentObserver;
 import android.hardware.fingerprint.FingerprintManager;
@@ -88,6 +89,9 @@ public class SettingsApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        // Force all loadLabel() calls to sanitize package labels
+        PackageItemInfo.forceSafeLabels();
 
         if (Flags.catalyst()) {
             CatalystFlagProviderFactory.INSTANCE.setProvider(

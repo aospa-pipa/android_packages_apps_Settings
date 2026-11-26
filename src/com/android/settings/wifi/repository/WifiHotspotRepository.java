@@ -366,8 +366,15 @@ public class WifiHotspotRepository {
 
         // If DBS (Multiple instances)
         if (numChannels > 1) {
-            if (specifies2ghz && specifies6ghz) return SPEED_2GHZ_6GHZ;
-            if (specifies2ghz && specifies5ghz) return SPEED_2GHZ_5GHZ;
+// QTI_BEGIN: 2026-05-17: WLAN: Settings: Select best available band after country code change.
+            if (specifies2ghz && specifies6ghz) {
+                if (is6gAvailable()) return SPEED_2GHZ_6GHZ;
+                return is5gAvailable() ? SPEED_2GHZ_5GHZ : SPEED_2GHZ;
+            }
+            if (specifies2ghz && specifies5ghz) {
+                return is5gAvailable() ? SPEED_2GHZ_5GHZ : SPEED_2GHZ;
+            }
+// QTI_END: 2026-05-17: WLAN: Settings: Select best available band after country code change.
         }
 
         // If Single AP

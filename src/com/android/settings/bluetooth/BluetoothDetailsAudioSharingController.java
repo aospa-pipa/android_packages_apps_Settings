@@ -59,9 +59,15 @@ public class BluetoothDetailsAudioSharingController extends BluetoothDetailsCont
 
     @Override
     public boolean isAvailable() {
+        // A CSIP-grouped device (e.g. a pair of earbuds) is represented by a single main
+        // CachedBluetoothDevice. If the main device itself has disconnected while its
+        // coordinated set member is still connected, fall back to the member's connection
+        // state so the audio sharing entrance doesn't disappear while a member is available.
         return BluetoothUtils.isAudioSharingUIAvailable(mContext)
-                && mCachedDevice.isConnectedLeAudioDevice()
-                && mCachedDevice.isConnectedLeAudioBroadcastAssistantDevice();
+                && (mCachedDevice.isConnectedLeAudioDevice()
+                        || mCachedDevice.hasConnectedLeAudioMemberDevice())
+                && (mCachedDevice.isConnectedLeAudioBroadcastAssistantDevice()
+                        || mCachedDevice.hasConnectedLeAudioBroadcastAssistantMemberDevice());
     }
 
     @Override
